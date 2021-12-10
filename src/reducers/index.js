@@ -1,8 +1,20 @@
-
+// import { UPDATE_SMURFS } from '../actions/index'
 export const initialState = {
+    smurfs: [],
+    loading: true,
+    error: '',
 }
 
-const reducer = ()=>{
+const reducer = (state = initialState, action)=>{
+    console.log('reducer');
+    // switch (action.type) {
+    //     case UPDATE_SMURFS:
+    //         return {
+    //             ...state,
+    //             smurfs: state.smurfs
+    //         }
+
+    // }
 }
 
 //**************DO NOT EDIT ANY CODE BEYOND THIS POINT**************//
