@@ -22,7 +22,7 @@ export const fetchSmurfs = () => {
 }
 
 export const addSmurf = (smurf) => {
-    return () => {
+    return (dispatch) => {
         axios.post(`http://localhost:3333/smurfs`, {
             id: "randomletters",
             name: smurf.name,
@@ -32,7 +32,7 @@ export const addSmurf = (smurf) => {
         })
             .then(res=> {
                 console.log(res)
-                fetchSmurfs()
+                dispatch({ type: SET_SMURFS, payload: res.data })
             })
             .catch(err=>{
                 console.log(err.response.data.error)
@@ -42,6 +42,7 @@ export const addSmurf = (smurf) => {
 }
 
 export const setSmurfs = (smurfs) => {
+    console.log('set')
     return{ type: SET_SMURFS, payload: smurfs } }
 export const setError = (error) => {
     return{ type: SET_ERROR, payload: error } }
