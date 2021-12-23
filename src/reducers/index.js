@@ -1,4 +1,5 @@
-// import { UPDATE_SMURFS } from '../actions/index'
+import { SET_SMURFS } from '../actions/index'
+
 export const initialState = {
     smurfs: [],
     loading: true,
@@ -7,6 +8,11 @@ export const initialState = {
 
 const reducer = (state = initialState, action)=>{
     switch(action.type) {
+        case SET_SMURFS:
+            return {
+                ...state,
+                smurfs: action.payload
+            }
         default:
             return state;
     }
