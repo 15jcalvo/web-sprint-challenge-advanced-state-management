@@ -1,4 +1,4 @@
-import { SET_SMURFS, START_FETCH, END_FETCH, SET_ERROR } from '../actions/index'
+import { SET_SMURFS, START_FETCH, END_FETCH, SET_ERROR, ADD_SMURF } from '../actions/index'
 
 export const initialState = {
     smurfs: [],
@@ -27,6 +27,11 @@ const reducer = (state = initialState, action)=>{
             return {
                 ...state,
                 error: action.payload
+            }
+        case ADD_SMURF:
+            return {
+                ...state,
+                smurfs: state.smurfs.push(action.payload)
             }
         default:
             return state;

@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 const mapStateToProps = (state) => ({ smurfs: state.smurfs, loading: state.loading });
 
  const SmurfList = (props)=> {
-
+    console.log('smurflist')
     if (props.loading) {
         return <h1>Loading...</h1>;
     }

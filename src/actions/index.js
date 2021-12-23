@@ -4,6 +4,7 @@ export const SET_SMURFS = "SET_SMURFS"
 export const START_FETCH = "START_FETCH"
 export const END_FETCH = "END_FETCH"
 export const SET_ERROR = "SET_ERROR"
+export const ADD_SMURF = "ADD_SMURF"
 
 export const fetchSmurfs = () => {
     return (dispatch) => {
@@ -15,7 +16,27 @@ export const fetchSmurfs = () => {
             })
             .catch(err=>{
                 console.log(err)
-                dispatch({ type: SET_ERROR, payload: err})
+                setError(err.response.data.error)
+            })
+    }
+}
+
+export const addSmurf = (smurf) => {
+    return () => {
+        axios.post(`http://localhost:3333/smurfs`, {
+            id: "randomletters",
+            name: smurf.name,
+            position: smurf.position,
+            nickname: smurf.nickname,
+            description: smurf.description
+        })
+            .then(res=> {
+                console.log(res)
+                fetchSmurfs()
+            })
+            .catch(err=>{
+                console.log(err.response.data.error)
+                setError(err.response.data.error)
             })
     }
 }

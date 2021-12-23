@@ -8,7 +8,9 @@ import Header from './components/Header';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
 
-const mapStateToProps = (state) => ({});
+const mapStateToProps = (state) => ({
+  smurfs: state.smurfs
+});
 
 const App = (props)=> {
   useEffect(()=>{
