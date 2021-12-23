@@ -6,15 +6,10 @@ export const initialState = {
 }
 
 const reducer = (state = initialState, action)=>{
-    console.log('reducer');
-    // switch (action.type) {
-    //     case UPDATE_SMURFS:
-    //         return {
-    //             ...state,
-    //             smurfs: state.smurfs
-    //         }
-
-    // }
+    switch(action.type) {
+        default:
+            return state;
+    }
 }
 
 //**************DO NOT EDIT ANY CODE BEYOND THIS POINT**************//
