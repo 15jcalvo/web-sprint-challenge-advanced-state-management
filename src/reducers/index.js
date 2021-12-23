@@ -2,7 +2,7 @@ import { SET_SMURFS } from '../actions/index'
 
 export const initialState = {
     smurfs: [],
-    loading: true,
+    loading: false,
     error: '',
 }
 

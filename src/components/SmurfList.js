@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Smurf from './Smurf';
 import { connect } from 'react-redux';
 import { fetchSmurfs } from '../actions/index'
 
-const mapStateToProps = (state) => ({ smurfs: state.smurfs });
+const mapStateToProps = (state) => ({ smurfs: state.smurfs, loading: state.loading });
 
- const SmurfList = ()=> {
+ const SmurfList = (props)=> {
+     useEffect(()=>{
+        props.fetchSmurfs();
+     },[])
     const isLoading = false;
     const testSmurf = {
         id:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
