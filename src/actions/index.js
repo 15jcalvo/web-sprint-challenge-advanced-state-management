@@ -1,5 +1,7 @@
 import axios from 'axios';
 
+export const SET_SMURFS = "SET_SMURFS"
+
 export const fetchSmurfs = () => {
     return (dispatch) => {
         axios.get(`http://localhost:3333/smurfs`)
@@ -10,6 +12,10 @@ export const fetchSmurfs = () => {
                 console.log(err)
             })
     }
+}
+
+export const setSmurfs = (smurfs) => {
+    return{ type: SET_SMURFS, payload: smurfs}
 }
 
 //Task List:
