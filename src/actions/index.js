@@ -1,12 +1,16 @@
 import axios from 'axios';
 
 export const SET_SMURFS = "SET_SMURFS"
+export const START_FETCH = "START_FETCH"
+export const END_FETCH = "END_FETCH"
 
 export const fetchSmurfs = () => {
     return (dispatch) => {
+        dispatch({ type: START_FETCH })
         axios.get(`http://localhost:3333/smurfs`)
             .then(res=>{
                 dispatch({ type: SET_SMURFS, payload: res.data })
+                dispatch({ type: END_FETCH })
             })
             .catch(err=>{
                 console.log(err)

@@ -1,4 +1,4 @@
-import { SET_SMURFS } from '../actions/index'
+import { SET_SMURFS, START_FETCH, END_FETCH } from '../actions/index'
 
 export const initialState = {
     smurfs: [],
@@ -8,6 +8,16 @@ export const initialState = {
 
 const reducer = (state = initialState, action)=>{
     switch(action.type) {
+        case START_FETCH:
+            return{
+                ...state,
+                loading: false,
+            }
+        case END_FETCH:
+            return{
+                ...state,
+                loading: true,
+            }
         case SET_SMURFS:
             return {
                 ...state,
