@@ -16,7 +16,7 @@ const reducer = (state = initialState, action)=>{
         case END_FETCH:
             return{
                 ...state,
-                loading: true,
+                loading: false,
             }
         case SET_SMURFS:
             return {
