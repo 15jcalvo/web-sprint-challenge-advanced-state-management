@@ -112,9 +112,13 @@ In this project, you will build the reducer, actions and basic redux connects to
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. Add your answers below.
 
 1. What problem does the context API help solve?
+    Context API tries to simplify the reducer/redux model by avoiding using complex actions and reducers
 
 2. In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
+    'actions' are the specific ways a component and a reducer can interact, 'reducers' are structures that update   state based on action cases, the 'store' is the information passed between components which is modified by the reducer, all interconnected components refer to the store to get their information.
 
 3. What does `redux-thunk` allow us to do? How does it change our `action-creators`?
+    redux-thunk adds functionality to actions- it allows actions to call functions and do more complex things.
 
 4. What is your favorite state management system you've learned and this sprint? Please explain why!
+    I like reducer/redux because it's more dynamic that useState and more specific than context API
