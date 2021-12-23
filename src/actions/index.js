@@ -7,6 +7,7 @@ export const fetchSmurfs = () => {
         axios.get(`http://localhost:3333/smurfs`)
             .then(res=>{
                 console.log(res)
+                dispatch({ type: SET_SMURFS, payload: res.data })
             })
             .catch(err=>{
                 console.log(err)
@@ -15,7 +16,7 @@ export const fetchSmurfs = () => {
 }
 
 export const setSmurfs = (smurfs) => {
-    return{ type: SET_SMURFS, payload: smurfs}
+    return{ type: SET_SMURFS, payload: smurfs }
 }
 
 //Task List:
